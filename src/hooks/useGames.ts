@@ -1,11 +1,7 @@
 import api_client from "@/services/api-client";
 import { CanceledError } from "axios";
 import { useEffect, useState } from "react";
-
-interface Game {
-  id: number;
-  name: string;
-}
+import {Game} from "@/types/game";
 
 interface FetchedGamesResponse {
   count: number;
