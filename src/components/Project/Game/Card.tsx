@@ -22,11 +22,11 @@ interface Props {
 
 const Card = ({ game }: Props) => {
   return (
-    <ChakraCard borderRadius={10} overflow="hidden">
+    <ChakraCard height="250px" borderRadius={10} overflow="hidden">
       <Image
         fit="cover"
         height={150}
-        src={game.background_image.replace("/media/", "/media/crop/300/200/")}
+        src={game.background_image.replace("/media/", "/media/crop/600/400/")}
         alt={game.name}
         borderRadius="lg"
       />
