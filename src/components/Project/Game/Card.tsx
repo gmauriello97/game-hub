@@ -26,7 +26,7 @@ const Card = ({ game }: Props) => {
       <Image
         fit="cover"
         height={150}
-        src={game.background_image}
+        src={game.background_image.replace("/media/", "/media/crop/300/200/")}
         alt={game.name}
         borderRadius="lg"
       />
