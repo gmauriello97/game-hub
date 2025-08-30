@@ -18,13 +18,13 @@ const Selector = ({ platform, onChange }: Props) => {
 
   return (
     <>
-      {isLoading ? (
+      {isLoading || !platforms ? (
         // Mostra 20 CardSkeleton
         <Skeleton width="180px" height="40px"></Skeleton>
       ) : (
         // Mostra le card dei giochi
         <Dropdown
-          title={platform?.name}
+          title={platform ? platform?.name : null}
           onChange={onChange}
           items={platforms}
           defaultName={ALL_PLATFORM}

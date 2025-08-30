@@ -54,7 +54,9 @@ const GameModal = ({ isOpen, onClose, game }: Props) => {
                 </SkeletonText>
               ) : (
                 <div
-                  dangerouslySetInnerHTML={{ __html: details.description }}
+                  dangerouslySetInnerHTML={{
+                    __html: details?.description || "",
+                  }}
                 ></div>
               )}
             </Flex>

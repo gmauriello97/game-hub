@@ -5,13 +5,18 @@ import { FaChevronDown } from "react-icons/fa";
 import { ALL_GENRE } from "../Strings/strings";
 
 interface Props<T> {
-  title: string;
-  onChange: (g: T) => void;
+  title: string | null;
+  onChange: (g: T | null) => void;
   items: T[];
   defaultName: string;
 }
 
-const Selector = ({ title, items, onChange, defaultName }: Props<T>) => {
+const Selector = <T extends { id: string | number; name: string }>({
+  title,
+  items,
+  onChange,
+  defaultName,
+}: Props<T>) => {
   return (
     <Menu>
       <MenuButton height="40px" as={Button} rightIcon={<FaChevronDown />}>

@@ -10,7 +10,7 @@ interface GameDetailsResponse {
 }
 
 const GameDetails = (game:Game) => {
-    const [details, setDetails] = useState<GameDetailsResponse | {}>([]);
+    const [details, setDetails] = useState<GameDetailsResponse | null>(null);
     const [error, setError] = useState("");
     const [isLoading, setLoading] = useState(false);
 
@@ -22,14 +22,13 @@ const GameDetails = (game:Game) => {
         api_client
         .get<GameDetailsResponse>("/games/"+game.id, {signal: controller.signal})
         .then((res) => {
-                console.log('Risposta ottenuta');
                 setDetails(res.data);
                 setError("");
                 setLoading(false);
             })
             .catch((e) => {
                 if(e instanceof CanceledError) return;
-                setDetails({});
+                setDetails(null);
                 setError(e.message);
                 setLoading(false);
             });

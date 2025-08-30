@@ -6,6 +6,10 @@ import theme from "./components/ui/theme";
 import "./index.css";
 
 const rootElement = document.getElementById("root");
+
+if (!rootElement) {
+  throw new Error("Elemento root non trovato nel DOM.");
+}
 ReactDOM.createRoot(rootElement).render(
   <React.StrictMode>
     <ChakraProvider theme={theme}>

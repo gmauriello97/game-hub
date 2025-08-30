@@ -5,7 +5,7 @@ import { OrderObj, options } from "@/types/order";
 
 interface Props {
   sort: string | null;
-  onChange: (g: OrderObj) => void;
+  onChange: (g: OrderObj | null) => void;
 }
 
 const OrderingSelector = ({ onChange, sort }: Props) => {
@@ -19,7 +19,7 @@ const OrderingSelector = ({ onChange, sort }: Props) => {
       defaultName={SORT_LABEL}
       items={options}
       title={"Order by: " + title}
-      onChange={(g) => onChange(g)}
+      onChange={(g) => onChange(g as OrderObj)}
     ></Dropdown>
   );
 };

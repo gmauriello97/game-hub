@@ -73,7 +73,10 @@ function App() {
               <OrderingSelector
                 sort={gameQuery.ordering}
                 onChange={(ordering: OrderObj | null) =>
-                  setGameQuery({ ...gameQuery, ordering: ordering?.id })
+                  setGameQuery({
+                    ...gameQuery,
+                    ordering: ordering ? ordering?.id : null,
+                  })
                 }
               />
             </HStack>

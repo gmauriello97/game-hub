@@ -21,13 +21,13 @@ const Selector = ({ genre, onChange, genres, isLoading }: Props) => {
 
   return (
     <>
-      {isLoading ? (
+      {isLoading || !genres ? (
         // Mostra 20 CardSkeleton
         <Skeleton width="180px" height="40px"></Skeleton>
       ) : (
         // Mostra le card dei giochi
         <Dropdown
-          title={genre?.name}
+          title={genre ? genre?.name : null}
           onChange={onChange}
           items={genres}
           defaultName={ALL_GENRE}
