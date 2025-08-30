@@ -8,7 +8,7 @@ import React from "react";
 
 const Skeleton = () => {
   return (
-    <Card height="250px" borderRadius={10} overflow="hidden">
+    <Card className="game-card">
       <ChakraSkeleton height="150px"></ChakraSkeleton>
       <CardBody>
         <SkeletonText></SkeletonText>
